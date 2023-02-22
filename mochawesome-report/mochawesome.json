@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-02-22T14:34:46.666Z",
+    "end": "2023-02-22T14:36:13.934Z",
+    "duration": 87268,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2e79c5f0-bf2e-479a-bc5d-add2dcc97653",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "97836545-a8fe-4177-a9f8-0d908330b4d2",
+          "title": "add todo tests",
+          "fullFile": "C:\\Users\\Ariel Campos\\Desktop\\Javascript selenium-webdriver\\labda-test-selenium-webdriver-JS\\test\\firstTest.js",
+          "file": "\\test\\firstTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Succesfully adds todo to application",
+              "fullTitle": "add todo tests Succesfully adds todo to application",
+              "timedOut": null,
+              "duration": 33001,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = await new Builder().forBrowser('chrome').build();\ndriver.manage().setTimeouts({ implicit: 50000 });\n// Navigate to our application\nawait driver.get('https://lambdatest.github.io/sample-todo-app/');\n//add a todo\nawait driver\n    .findElement(By.id('sampletodotext'))\n    .sendKeys('Learning Selenium', Key.RETURN);\n// assert using node assertion\nlet todoText = await driver\n    .findElement(By.xpath('//li[last()]'))\n    .getText();\n// assert using chai should\ntodoText.should.equal('Learning Selenium');\n// close the browser\nawait driver.quit();",
+              "err": {},
+              "uuid": "945f02f5-278c-4860-bbac-9d815a133245",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "945f02f5-278c-4860-bbac-9d815a133245"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 33001,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "320abd2d-64f4-4300-987e-6305e965ac33",
+          "title": "add another todo tests",
+          "fullFile": "C:\\Users\\Ariel Campos\\Desktop\\Javascript selenium-webdriver\\labda-test-selenium-webdriver-JS\\test\\secondTest.js",
+          "file": "\\test\\secondTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Succesfully adds another todo to application",
+              "fullTitle": "add another todo tests Succesfully adds another todo to application",
+              "timedOut": null,
+              "duration": 26183,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = await new Builder().forBrowser('chrome').build();\ndriver.manage().setTimeouts({ implicit: 50000 });\n\n// Navigate to our application\nawait driver.get('https://lambdatest.github.io/sample-todo-app/');\n//add a todo\nawait driver\n    .findElement(By.id('sampletodotext'))\n    .sendKeys('Learning Selenium', Key.RETURN);\n// assert using node assertion\nlet todoText = await driver\n    .findElement(By.xpath('//li[last()]'))\n    .getText();\n// assert using chai should\ntodoText.should.equal('Learning Selenium');\n// close the browser\nawait driver.quit();",
+              "err": {},
+              "uuid": "89817208-e770-4d9a-8247-91d4cf440d29",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adding a new test for reporting",
+              "fullTitle": "add another todo tests Adding a new test for reporting",
+              "timedOut": null,
+              "duration": 27421,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "let driver = await new Builder().forBrowser('chrome').build();\ndriver.manage().setTimeouts({ implicit: 50000 });\n// Navigate to our application\nawait driver.get('https://lambdatest.github.io/sample-todo-app/');\n//add a todo\nawait driver\n    .findElement(By.id('sampletodotext'))\n    .sendKeys('Learning Selenium', Key.RETURN);\n// assert using node assertion\nlet todoText = await driver\n    .findElement(By.xpath('//li[last()]'))\n    .getText();\n// assert using chai should\ntodoText.should.equal('Learning Javascript');\n// close the browser\nawait driver.quit();",
+              "err": {
+                "message": "AssertionError: expected 'Learning Selenium' to equal 'Learning Javascript'",
+                "estack": "AssertionError: expected 'Learning Selenium' to equal 'Learning Javascript'\n    at Context.<anonymous> (test\\secondTest.js:50:25)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                "diff": "- Learning Selenium\n+ Learning Javascript\n"
+              },
+              "uuid": "7c5c00a7-4ee4-473c-986d-78d4099cd36d",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "89817208-e770-4d9a-8247-91d4cf440d29"
+          ],
+          "failures": [
+            "7c5c00a7-4ee4-473c-986d-78d4099cd36d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 53604,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
